@@ -21,7 +21,16 @@ export default {
   },
   methods: {
     onSearch(searchText) {
-      console.log(searchText);
+      this.$http
+        .get("search", {
+          params: {
+            q: searchText,
+            type: "album,artist,track"
+          }
+        })
+        .then(res => {
+          console.log(res);
+        });
     }
   }
 };

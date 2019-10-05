@@ -9,7 +9,7 @@ import SpotifySearch from "./components/SpotifySearch";
 
 export default {
   components: {
-    "app-spotify-search": SpotifySearch
+    appSpotifySearch: SpotifySearch
   }
 };
 </script>
