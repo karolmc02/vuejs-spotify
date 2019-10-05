@@ -1,10 +1,21 @@
 <template>
-  <a :href="song.external_urls.spotify" class="song" target="_blank">
-    <div class="song-name">{{song.name}}</div>
-    <div class="song-artist">{{artists}}</div>
-    <div class="song-album">{{song.album.name}}</div>
+  <div class="song">
+    <div class="song-name">
+      <a :href="song.external_urls.spotify" target="_blank">{{song.name}}</a>
+    </div>
+    <div class="song-artist">
+      <a
+        :href="artist.external_urls.spotify"
+        v-for="(artist,index) in song.artists"
+        :key="artist.id"
+        target="_blank"
+      >{{artist.name}}{{index != song.artists.length-1 ? ", " : ""}}</a>
+    </div>
+    <div class="song-album">
+      <a :href="song.album.external_urls.spotify" target="_blank">{{song.album.name}}</a>
+    </div>
     <div class="song-duration">{{milisToString(song.duration_ms)}}</div>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -18,13 +29,7 @@ export default {
   },
   computed: {
     artists() {
-      return this.song.artists.reduce((acc, artist, index) => {
-        if (index < this.song.artists.length - 1) {
-          return acc + artist.name + ", ";
-        } else {
-          return acc + artist.name;
-        }
-      }, "");
+      return this.song.artists.map(artist => artist.name).join(", ");
     }
   },
   methods: {
@@ -51,8 +56,13 @@ export default {
   }
   .song-artist,
   .song-album {
-    color: var(--gray-text-color);
-    font-size: 90%;
+    a {
+      color: var(--gray-text-color);
+      font-size: 90%;
+      &:hover {
+        color: var(--main-text-color);
+      }
+    }
   }
 }
 </style>
