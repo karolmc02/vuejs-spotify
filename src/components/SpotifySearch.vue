@@ -21,21 +21,23 @@ export default {
   },
   methods: {
     onSearch(searchText) {
-      this.$http
-        .get("search", {
-          params: {
-            q: searchText,
-            type: "album,artist,track"
-          }
-        })
-        .then(res => {
-          const results = {
-            artists: res.body.artists.items,
-            songs: res.body.tracks.items,
-            albums: res.body.albums.items
-          };
-          this.results = results;
-        });
+      if (searchText) {
+        this.$http
+          .get("search", {
+            params: {
+              q: searchText,
+              type: "album,artist,track"
+            }
+          })
+          .then(res => {
+            const results = {
+              artists: res.body.artists.items,
+              songs: res.body.tracks.items,
+              albums: res.body.albums.items
+            };
+            this.results = results;
+          });
+      }
     }
   }
 };
