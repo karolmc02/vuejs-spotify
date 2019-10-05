@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <app-spotify-search></app-spotify-search>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import SpotifySearch from "./components/SpotifySearch";
 
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    "app-spotify-search": SpotifySearch
   }
 };
 </script>
 
 <style lang="scss">
-#app {
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --lighter-gray: #666666;
+  --light-gray: #444444;
+  --dark-gray: #292929;
+  --spotify-green: #008d0c;
+}
+
+html,
+body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background-color: var(--dark-gray);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  #app {
+    height: 100vh;
+  }
 }
 </style>
