@@ -28,9 +28,9 @@
         </li>
       </ul>
     </nav>
-    <section>
-      <component :is="resultsView"></component>
-    </section>
+    <div class="results">
+      <component :is="resultsView" :results="searchResults"></component>
+    </div>
   </div>
 </template>
 
@@ -49,15 +49,10 @@ export default {
   },
   data() {
     return {
-      resultsView: "app-all-results"
+      resultsView: "app-artist-results"
     };
   },
-  props: ["searchResults"],
-  watch: {
-    searchResults(newData, oldData) {
-      console.log(newData);
-    }
-  }
+  props: ["searchResults"]
 };
 </script>
 
@@ -94,5 +89,8 @@ nav {
       }
     }
   }
+}
+.results {
+  margin: 15px 20px;
 }
 </style>

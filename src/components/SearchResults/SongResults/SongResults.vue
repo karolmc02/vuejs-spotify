@@ -13,7 +13,6 @@ export default {
   props: ["results"],
   computed: {
     songs() {
-      console.log(this.results.songs);
       return this.results.songs;
     }
   }

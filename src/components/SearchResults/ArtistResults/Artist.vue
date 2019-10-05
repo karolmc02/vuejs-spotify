@@ -16,7 +16,6 @@ export default {
   },
   computed: {
     image() {
-      console.log(this.artist);
       return this.artist.images.length > 0
         ? this.artist.images[1].url
         : "https://geodash.gov.bd/uploaded/people_group/default_group.png";

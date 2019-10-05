@@ -15,11 +15,6 @@ export default {
     artists() {
       return this.results.artists;
     }
-  },
-  watch: {
-    artists() {
-      console.log(this.results);
-    }
   }
 };
 </script>
