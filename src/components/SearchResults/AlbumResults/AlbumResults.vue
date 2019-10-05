@@ -10,10 +10,20 @@ export default {
   components: {
     appAlbum: Album
   },
-  props: ["results"],
+  props: {
+    results: {
+      type: Object
+    },
+    resultsLimit: {
+      type: Number,
+      default: 20
+    }
+  },
   computed: {
     albums() {
-      return this.results.albums;
+      return (this.results.albums || []).filter(
+        (album, index) => index < this.resultsLimit
+      );
     }
   }
 };
@@ -23,6 +33,6 @@ export default {
 .album-results {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 </style>

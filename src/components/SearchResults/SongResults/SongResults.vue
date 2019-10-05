@@ -10,10 +10,20 @@ export default {
   components: {
     appSong: Song
   },
-  props: ["results"],
+  props: {
+    results: {
+      type: Object
+    },
+    resultsLimit: {
+      type: Number,
+      default: 20
+    }
+  },
   computed: {
     songs() {
-      return this.results.songs;
+      return (this.results.songs || []).filter(
+        (song, index) => index < this.resultsLimit
+      );
     }
   }
 };

@@ -4,25 +4,25 @@
       <ul>
         <li
           :class="{active: resultsView == 'app-all-results'}"
-          @click.prevent="resultsView = 'app-all-results'"
+          @click="resultsView = 'app-all-results'"
         >
           <a href="#">All</a>
         </li>
         <li
           :class="{active: resultsView == 'app-artist-results'}"
-          @click.prevent="resultsView = 'app-artist-results'"
+          @click="resultsView = 'app-artist-results'"
         >
           <a href="#">Artist</a>
         </li>
         <li
           :class="{active: resultsView == 'app-song-results'}"
-          @click.prevent="resultsView = 'app-song-results'"
+          @click="resultsView = 'app-song-results'"
         >
           <a href="#">Songs</a>
         </li>
         <li
           :class="{active: resultsView == 'app-album-results'}"
-          @click.prevent="resultsView = 'app-album-results'"
+          @click="resultsView = 'app-album-results'"
         >
           <a href="#">Albums</a>
         </li>
@@ -49,7 +49,7 @@ export default {
   },
   data() {
     return {
-      resultsView: "app-artist-results"
+      resultsView: "app-all-results"
     };
   },
   props: ["searchResults"]

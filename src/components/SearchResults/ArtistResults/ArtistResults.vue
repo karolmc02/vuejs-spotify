@@ -10,10 +10,20 @@ export default {
   components: {
     appArtist: Artist
   },
-  props: ["results"],
+  props: {
+    results: {
+      type: Object
+    },
+    resultsLimit: {
+      type: Number,
+      default: 20
+    }
+  },
   computed: {
     artists() {
-      return this.results.artists;
+      return (this.results.artists || []).filter(
+        (artist, index) => index < this.resultsLimit
+      );
     }
   }
 };
