@@ -51,6 +51,12 @@ export default {
     return {
       resultsView: "app-all-results"
     };
+  },
+  props: ["searchResults"],
+  watch: {
+    searchResults(newData, oldData) {
+      console.log(newData);
+    }
   }
 };
 </script>

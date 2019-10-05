@@ -1,7 +1,7 @@
 <template>
   <div class="spotify-search">
     <app-search-bar @search="onSearch($event)"></app-search-bar>
-    <app-search-results class="search-results"></app-search-results>
+    <app-search-results class="search-results" :searchResults="results"></app-search-results>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      searchResults: []
+      results: {}
     };
   },
   methods: {
@@ -29,7 +29,12 @@ export default {
           }
         })
         .then(res => {
-          console.log(res);
+          const results = {
+            artists: res.body.artists.items,
+            songs: res.body.tracks.items,
+            albums: res.body.albums.items
+          };
+          this.results = results;
         });
     }
   }
