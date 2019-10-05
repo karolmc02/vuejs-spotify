@@ -1,6 +1,10 @@
 <template>
   <div class="album-results">
-    <app-album v-for="album in albums" :key="album.id" :album="album"></app-album>
+    <h2 class="results-title">Albums</h2>
+    <div class="results">
+      <app-album v-for="album in albums" :key="album.id" :album="album"></app-album>
+    </div>
+    <p class="no-results" v-if="albums.length == 0">No albums found</p>
   </div>
 </template>
 
@@ -31,8 +35,10 @@ export default {
 
 <style lang="scss" scoped>
 .album-results {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  .results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 </style>

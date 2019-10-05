@@ -1,16 +1,13 @@
 <template>
   <div class="all-results">
     <div v-if="results.artists">
-      <h2 class="results-title">Artists</h2>
-      <app-artist-results :results="results" :resultsLimit="7"></app-artist-results>
+      <app-artist-results :results="results" :resultsLimit="8"></app-artist-results>
     </div>
     <div v-if="results.songs">
-      <h2 class="results-title">Songs</h2>
-      <app-song-results :results="results" :resultsLimit="7"></app-song-results>
+      <app-song-results :results="results" :resultsLimit="8"></app-song-results>
     </div>
     <div v-if="results.albums">
-      <h2 class="results-title">Albums</h2>
-      <app-album-results :results="results" :resultsLimit="7"></app-album-results>
+      <app-album-results :results="results" :resultsLimit="8"></app-album-results>
     </div>
   </div>
 </template>
@@ -33,8 +30,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .results-title {
   border-bottom: 1px solid var(--light-gray);
+  margin-bottom: 0;
+}
+.no-results {
+  color: var(--gray-text-color);
 }
 </style>
