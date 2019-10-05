@@ -21,7 +21,7 @@ export default {
 
 :root {
   --lighter-gray: #666666;
-  --light-gray: #444444;
+  --light-gray: #3b3b3b;
   --dark-gray: #292929;
   --spotify-green: #008d0c;
 }
