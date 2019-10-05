@@ -1,10 +1,12 @@
 <template>
-  <a :href="artist.external_urls.spotify" class="artist" target="_blank">
-    <div class="artist-image">
+  <div class="artist">
+    <a :href="artist.external_urls.spotify" target="_blank" class="artist-image">
       <img :src="image" :alt="`Image of ${artist.name}`" />
+    </a>
+    <div class="artist-name">
+      <a :href="artist.external_urls.spotify" target="_blank">{{artist.name}}</a>
     </div>
-    <div class="artist-name">{{artist.name}}</div>
-  </a>
+  </div>
 </template>
 
 <script>
