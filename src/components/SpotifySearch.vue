@@ -1,6 +1,6 @@
 <template>
   <div class="spotify-search">
-    <app-search-bar></app-search-bar>
+    <app-search-bar @search="onSearch($event)"></app-search-bar>
     <app-search-results class="search-results"></app-search-results>
   </div>
 </template>
@@ -11,8 +11,18 @@ import SearchResults from "./SearchResults/SearchResults";
 
 export default {
   components: {
-    "app-search-bar": SearchBar,
-    "app-search-results": SearchResults
+    appSearchBar: SearchBar,
+    appSearchResults: SearchResults
+  },
+  data() {
+    return {
+      searchResults: []
+    };
+  },
+  methods: {
+    onSearch(searchText) {
+      console.log(searchText);
+    }
   }
 };
 </script>

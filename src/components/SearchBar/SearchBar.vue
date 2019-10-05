@@ -5,12 +5,25 @@
       class="search-text"
       autofocus
       placeholder="Search for artist, song or album..."
+      v-model="searchText"
+      @keypress.enter="search()"
     />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      searchText: ""
+    };
+  },
+  methods: {
+    search() {
+      this.$emit("search", this.searchText);
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss">
