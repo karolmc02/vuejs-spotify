@@ -54,6 +54,11 @@ export default {
     text-align: end;
     color: var(--gray-text-color);
   }
+  .song-name {
+    &:hover a {
+      color: var(--spotify-green);
+    }
+  }
   .song-artist,
   .song-album {
     a {

@@ -50,6 +50,9 @@ export default {
   .artist-name {
     margin-top: 10px;
     text-align: center;
+    &:hover a {
+      color: var(--spotify-green);
+    }
   }
 }
 </style>

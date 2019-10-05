@@ -59,6 +59,9 @@ export default {
   .album-name {
     margin-top: 5px;
     text-align: center;
+    &:hover a {
+      color: var(--spotify-green);
+    }
   }
   .album-artist {
     margin-top: 5px;
