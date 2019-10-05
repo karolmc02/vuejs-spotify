@@ -25,7 +25,7 @@ export default {
   --dark-gray: #292929;
   --spotify-green: #00a10d;
   --main-text-color: white;
-  --gray-text-color: #d3d3d3;
+  --gray-text-color: #9e9e9e;
 }
 
 html,
