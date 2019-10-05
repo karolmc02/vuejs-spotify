@@ -1,9 +1,24 @@
 <template>
-  <h2>SongResults</h2>
+  <div class="song-results">
+    <app-song v-for="song in songs" :key="song.id" :song="song"></app-song>
+  </div>
 </template>
 
 <script>
-export default {};
+import Song from "./Song";
+export default {
+  components: {
+    appSong: Song
+  },
+  props: ["results"],
+  computed: {
+    songs() {
+      console.log(this.results.songs);
+      return this.results.songs;
+    }
+  }
+};
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+</style>
