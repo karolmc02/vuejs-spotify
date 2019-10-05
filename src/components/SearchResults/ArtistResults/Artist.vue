@@ -1,10 +1,10 @@
 <template>
-  <div class="artist">
+  <a :href="artist.external_urls.spotify" class="artist" target="_blank">
     <div class="artist-image">
       <img :src="image" :alt="`Image of ${artist.name}`" />
     </div>
     <div class="artist-name">{{artist.name}}</div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -30,10 +30,18 @@ export default {
   .artist-image {
     height: 200px;
     width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
-      height: 100%;
-      width: 100%;
+      height: 180px;
+      width: 180px;
       border-radius: 50%;
+      transition: width 0.5s, height 0.5s;
+      &:hover {
+        height: 200px;
+        width: 200px;
+      }
     }
   }
   .artist-name {
