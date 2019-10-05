@@ -31,6 +31,7 @@ export default {
   height: 75px;
   padding: 10px 40px;
   background-color: var(--light-gray);
+  flex: 0 0 auto;
   .search-text {
     border: none;
     width: 100%;

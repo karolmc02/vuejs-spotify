@@ -47,7 +47,7 @@ export default {
   flex-direction: column;
   height: 100vh;
   .search-results {
-    flex-grow: 1;
+    flex: 0 1 auto;
   }
 }
 </style>
