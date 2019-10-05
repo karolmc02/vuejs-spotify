@@ -22,5 +22,7 @@ export default {
 <style lang="scss" scoped>
 .artist-results {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>

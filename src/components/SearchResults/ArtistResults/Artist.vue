@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .artist {
   margin: 10px;
+  width: 200px;
   .artist-image {
     height: 200px;
     width: 200px;
