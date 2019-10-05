@@ -23,7 +23,8 @@ export default {
   --lighter-gray: #666666;
   --light-gray: #3b3b3b;
   --dark-gray: #292929;
-  --spotify-green: #008d0c;
+  --spotify-green: #00a10d;
+  --main-text-color: white;
 }
 
 html,
@@ -31,7 +32,7 @@ body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
+  color: var(--main-text-color);
   background-color: var(--dark-gray);
   margin: 0;
   padding: 0;
@@ -39,6 +40,10 @@ body {
 
   #app {
     height: 100vh;
+  }
+  a {
+    text-decoration: none;
+    color: var(--main-text-color);
   }
 }
 </style>
