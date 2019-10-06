@@ -29,7 +29,9 @@
       </ul>
     </nav>
     <div class="results">
-      <component :is="resultsView" :results="searchResults"></component>
+      <transition mode="out-in">
+        <component :is="resultsView" :results="searchResults"></component>
+      </transition>
     </div>
   </div>
 </template>
@@ -92,5 +94,15 @@ nav {
 }
 .results {
   margin: 15px 20px;
+}
+.v-enter {
+  opacity: 0;
+}
+.v-enter-active {
+  transition: opacity 0.25s;
+}
+.v-leave-active {
+  transition: opacity 0.25s;
+  opacity: 0;
 }
 </style>
