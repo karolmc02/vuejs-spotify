@@ -6,7 +6,7 @@
       autofocus
       placeholder="Search for artist, song or album..."
       v-model="searchText"
-      @keypress.enter="search()"
+      @input="search()"
     />
   </div>
 </template>
