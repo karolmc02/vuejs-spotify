@@ -4,5 +4,13 @@ const milisToString = (ms, delim = " : ") => {
     const minutes = showWith0(Math.floor((ms / (1000 * 60)) % 60));
     const seconds = showWith0(Math.floor((ms / 1000) % 60));
     return `${parseInt(hours) ? `${hours}${delim}` : ""}${minutes}${delim}${seconds}`;
-}
-export { milisToString };
+};
+const debounce = (callback, wait) => {
+    let timeout;
+    return (...args) => {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => callback.apply(context, args), wait);
+    }
+};
+export { milisToString, debounce };

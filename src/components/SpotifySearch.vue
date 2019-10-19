@@ -8,6 +8,7 @@
 <script>
 import SearchBar from "./SearchBar/SearchBar";
 import SearchResults from "./SearchResults/SearchResults";
+import { debounce } from "../utils";
 
 export default {
   components: {
@@ -39,6 +40,9 @@ export default {
           });
       }
     }
+  },
+  created() {
+    this.onSearch = debounce(this.onSearch, 500);
   }
 };
 </script>
